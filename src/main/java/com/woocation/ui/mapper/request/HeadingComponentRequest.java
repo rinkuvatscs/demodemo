@@ -1,9 +1,11 @@
 package com.woocation.ui.mapper.request;
 
+import com.woocation.ui.mapper.constants.WoocationTypes;
+
 public class HeadingComponentRequest {
 
-	private String text;
-	private String iconPath;
+	private String text = WoocationTypes.WOOCATION_HEADING_TEXT_DEFAULT_VALUE.getMessage();
+	private String iconPath = WoocationTypes.WOOCATION_HEADING_ICON_DEFAULT_VALUE.getMessage();;
 	private int order ;
 
 	public String getText() {

@@ -27,7 +27,7 @@ public enum WoocationTypes {
 	WOOCATION_FONT_COLOR("font_color"),
 	WOOCATION_FONT_STYLE("font_style"),
 	WOOCATION_ICON("icon"),
-	WOOCATION_ICON_HEIGHT("ico_height"),
+	WOOCATION_ICO_HEIGHT("ico_height"),
 	
 	WOOCATION_GLOBAL_NAME("global");
 	private String message;
