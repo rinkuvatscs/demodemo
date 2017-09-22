@@ -16,6 +16,23 @@ public enum WoocationTypes {
 	WOOCATION_HEADING_ICO_HEIGHT_DEFAULT_VALUE("25px") ,
 
 	
+	
+	/**
+	 * PlainText Component Default Values
+	 */
+	WOOCATION_PLAINTEXT_COMPONENT_NAME("PlainText") ,
+	WOOCATION_PLAINTEXT_DISPLAY_NAME_DEFAULT_VALUE("Plain Text") ,
+	WOOCATION_PLAINTEXT_TYPE_DEFAULT_VALUE("plain-text") ,
+	WOOCATION_PLAINTEXT_TEXT_DEFAULT_VALUE("<b>4</b> health alerts to be aware of") ,
+	WOOCATION_PLAINTEXT_ALIGN_TEXT_DEFAULT_VALUE("center"),
+	WOOCATION_PLAINTEXT_PADDING_DEFAULT_VALUE("5px 15px") ,
+	WOOCATION_PLAINTEXT_FONT_SIZE_DEFAULT_VALUE("15px") ,
+	WOOCATION_PLAINTEXT_FONT_COLOR_DEFAULT_VALUE("#69737b") ,
+	WOOCATION_PLAINTEXT_FONT_STYLE_DEFAULT_VALUE("") ,
+	
+
+	
+	
 	/**
 	 * Insight Level keys
 	 */
@@ -28,8 +45,11 @@ public enum WoocationTypes {
 	WOOCATION_FONT_STYLE("font_style"),
 	WOOCATION_ICON("icon"),
 	WOOCATION_ICO_HEIGHT("ico_height"),
-	
-	WOOCATION_GLOBAL_NAME("global");
+	WOOCATION_ALIGN_TEXT("align_text"),
+	WOOCATION_PADDING("padding"),
+	WOOCATION_HEIGHT("height"),
+	WOOCATION_COLOR("color"),
+	WOOCATION_GLOBAL_NAME("Global");
 	private String message;
 
 	WoocationTypes(String message) {

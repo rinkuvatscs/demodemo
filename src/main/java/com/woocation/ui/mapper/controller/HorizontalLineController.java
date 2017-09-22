@@ -8,19 +8,19 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.woocation.ui.mapper.request.HeadingComponentRequest;
-import com.woocation.ui.mapper.service.impl.HeadingWoocationComponent;
+import com.woocation.ui.mapper.service.impl.HorizontalWoocationComponent;
 
 @RestController
-@RequestMapping(value = "/woocation/ui/heading" , produces ="application/json")
-public class HeadingController {
+@RequestMapping(value = "/woocation/ui/horizontalline" , produces ="application/json")
+public class HorizontalLineController {
 
 	@Autowired
-	private HeadingWoocationComponent headingWoocationComponent;
+	private HorizontalWoocationComponent horizontalWoocationComponent;
 
 	@RequestMapping(value ="/")
-	public Map<String,Object> generateHeadingContent(
+	public Map<String,Object> generatePlainTextContent(
 			@RequestBody HeadingComponentRequest headingComponentRequest) {
-		return headingWoocationComponent.processRequest(headingComponentRequest).getHeadingResponse();
+		return horizontalWoocationComponent.processRequest(headingComponentRequest).getHeadingResponse();
 	}
 
 }

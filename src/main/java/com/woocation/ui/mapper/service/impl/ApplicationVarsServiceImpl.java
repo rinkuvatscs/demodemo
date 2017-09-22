@@ -30,6 +30,7 @@ public class ApplicationVarsServiceImpl implements ApplicationVarsService {
 
 	private ApplicationVars putValues(ApplicationVars applicationVars, Map<String, String> values) {
 		values.forEach((key, value) -> applicationVars.getApplicationVarsContent().put(key, value));
+		applicationVarsRepository.save(applicationVars);
 		return applicationVars;
 	}
 

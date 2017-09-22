@@ -7,12 +7,13 @@ import org.springframework.util.StringUtils;
 
 import com.woocation.ui.mapper.request.ApplicationVars;
 import com.woocation.ui.mapper.request.HeadingComponentRequest;
+import com.woocation.ui.mapper.request.HorizontalComponentRequest;
 import com.woocation.ui.mapper.response.WoocationCompoonentResponse;
 import com.woocation.ui.mapper.service.WoocationComponent;
 import static com.woocation.ui.mapper.constants.WoocationTypes.*;
 
 @Component
-public class HeadingWoocationComponent implements WoocationComponent {
+public class HorizontalWoocationComponent implements WoocationComponent {
 
 	@Autowired
 	private ApplicationVarsServiceImpl applicationVarsServiceImpl;
@@ -20,59 +21,61 @@ public class HeadingWoocationComponent implements WoocationComponent {
 	@Value("${enable.applications.vars:false}")
 	private boolean isVarsEnable;
 
-	public WoocationCompoonentResponse processRequest(HeadingComponentRequest headingComponentRequest) {
+	public WoocationCompoonentResponse processRequest(HorizontalComponentRequest horizontalComponentRequest) {
 		WoocationCompoonentResponse headingCompoonentResponse = new WoocationCompoonentResponse();
-		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_TEXT.getMessage(),
-				headingComponentRequest.getText());
-		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_ICON.getMessage(),
-				headingComponentRequest.getIconPath());
-		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_ORDER.getMessage(),
-				headingComponentRequest.getOrder());
+		
+		processContentPlacement(horizontalComponentRequest , headingCompoonentResponse);
+		
 		if (isVarsEnable) {
 			processForGlobalVars(headingCompoonentResponse);
 			processForComponentVars(headingCompoonentResponse);
 		} else {
-			headingDefaultConfiguraions(headingCompoonentResponse);
+			plainTextDefaultConfiguraions(headingCompoonentResponse);
 		}
 
 		return headingCompoonentResponse;
 	}
-
-	private void processForComponentVars(WoocationCompoonentResponse headingCompoonentResponse) {
-		ApplicationVars componentHeadingApplicationVars = applicationVarsServiceImpl
-				.getApplicationVars(WOOCATION_HEADING_COMPONENT_NAME.getMessage());
-		if (!StringUtils.isEmpty(componentHeadingApplicationVars)
-				&& !StringUtils.isEmpty(componentHeadingApplicationVars.getApplicationVarsContent())) {
-			componentHeadingApplicationVars.getApplicationVarsContent()
-					.forEach((key, value) -> headingCompoonentResponse.getHeadingResponse().put(key, value));
-		}
+	
+	private void processContentPlacement(HorizontalComponentRequest horizontalComponentRequest , WoocationCompoonentResponse headingCompoonentResponse) {
+		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_ORDER.getMessage(),
+				horizontalComponentRequest.getOrder());
 	}
-
+	
 	private void processForGlobalVars(WoocationCompoonentResponse headingCompoonentResponse) {
-
+		
 		ApplicationVars globalHeadingApplicationVars = applicationVarsServiceImpl
 				.getApplicationVars(WOOCATION_GLOBAL_NAME.getMessage());
 		if (!StringUtils.isEmpty(globalHeadingApplicationVars)
 				&& !StringUtils.isEmpty(globalHeadingApplicationVars.getApplicationVarsContent())) {
 			headingCompoonentResponse.getHeadingResponse().put(WOOCATION_FONT_SIZE.getMessage(),
 					globalHeadingApplicationVars.getApplicationVarsContent().get(WOOCATION_FONT_SIZE.getMessage()));
-			headingCompoonentResponse.getHeadingResponse().put(WOOCATION_FONT_STYLE.getMessage(),
-					globalHeadingApplicationVars.getApplicationVarsContent().get(WOOCATION_FONT_STYLE.getMessage()));
 		}
 	}
 
-	private void headingDefaultConfiguraions(WoocationCompoonentResponse headingCompoonentResponse) {
+	private void processForComponentVars(WoocationCompoonentResponse headingCompoonentResponse) {
+		ApplicationVars componentHeadingApplicationVars = applicationVarsServiceImpl
+				.getApplicationVars(WOOCATION_PLAINTEXT_COMPONENT_NAME.getMessage());
+			if (!StringUtils.isEmpty(componentHeadingApplicationVars)
+				&& !StringUtils.isEmpty(componentHeadingApplicationVars.getApplicationVarsContent())) {
+			componentHeadingApplicationVars.getApplicationVarsContent()
+					.forEach((key, value) -> headingCompoonentResponse.getHeadingResponse().put(key, value));
+		}
+	}
+	
+	private void plainTextDefaultConfiguraions(WoocationCompoonentResponse headingCompoonentResponse) {
 		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_DISPLAY_NAME.getMessage(),
-				WOOCATION_HEADING_DISPLAY_NAME_DEFAULT_VALUE.getMessage());
+				WOOCATION_PLAINTEXT_DISPLAY_NAME_DEFAULT_VALUE.getMessage());
 		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_TYPE.getMessage(),
-				WOOCATION_HEADING_TYPE_DEFAULT_VALUE.getMessage());
+				WOOCATION_PLAINTEXT_TYPE_DEFAULT_VALUE.getMessage());
+		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_ALIGN_TEXT.getMessage(),
+				WOOCATION_PLAINTEXT_ALIGN_TEXT_DEFAULT_VALUE.getMessage());
+		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_PADDING.getMessage(),
+				WOOCATION_PLAINTEXT_PADDING_DEFAULT_VALUE.getMessage());
 		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_FONT_SIZE.getMessage(),
-				WOOCATION_HEADING_FONT_SIZE_DEFAULT_VALUE.getMessage());
+				WOOCATION_PLAINTEXT_FONT_SIZE_DEFAULT_VALUE.getMessage());
 		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_FONT_COLOR.getMessage(),
-				WOOCATION_HEADING_FONT_COLOR_DEFAULT_VALUE.getMessage());
+				WOOCATION_PLAINTEXT_FONT_COLOR_DEFAULT_VALUE.getMessage());
 		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_FONT_STYLE.getMessage(),
-				WOOCATION_HEADING_FONT_STYLE_DEFAULT_VALUE.getMessage());
-		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_ICO_HEIGHT.getMessage(),
-				WOOCATION_HEADING_ICO_HEIGHT_DEFAULT_VALUE.getMessage());
+				WOOCATION_PLAINTEXT_FONT_STYLE_DEFAULT_VALUE.getMessage());
 	}
 }
