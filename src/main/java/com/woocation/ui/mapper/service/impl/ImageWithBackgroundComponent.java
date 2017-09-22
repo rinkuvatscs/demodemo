@@ -7,6 +7,7 @@ import org.springframework.util.StringUtils;
 
 import com.woocation.ui.mapper.request.ApplicationVars;
 import com.woocation.ui.mapper.request.HeadingComponentRequest;
+import com.woocation.ui.mapper.request.ImageWithBackgroundComponentRequest;
 import com.woocation.ui.mapper.response.WoocationCompoonentResponse;
 import com.woocation.ui.mapper.service.WoocationComponent;
 import static com.woocation.ui.mapper.constants.WoocationTypes.*;
@@ -20,14 +21,14 @@ public class ImageWithBackgroundComponent implements WoocationComponent {
 	@Value("${enable.applications.vars:false}")
 	private boolean isVarsEnable;
 
-	public WoocationCompoonentResponse processRequest(HeadingComponentRequest headingComponentRequest) {
+	public WoocationCompoonentResponse processRequest(ImageWithBackgroundComponentRequest imageWithBackgroundComponentRequest) {
 		WoocationCompoonentResponse headingCompoonentResponse = new WoocationCompoonentResponse();
 		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_TEXT.getMessage(),
-				headingComponentRequest.getText());
-		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_ICON.getMessage(),
-				headingComponentRequest.getIconPath());
+				imageWithBackgroundComponentRequest.getText());
+		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_IMAGE_URL.getMessage(),
+				imageWithBackgroundComponentRequest.getImageUrl());
 		headingCompoonentResponse.getHeadingResponse().put(WOOCATION_ORDER.getMessage(),
-				headingComponentRequest.getOrder());
+				imageWithBackgroundComponentRequest.getOrder());
 		if (isVarsEnable) {
 			processForGlobalVars(headingCompoonentResponse);
 			processForComponentVars(headingCompoonentResponse);
@@ -40,7 +41,7 @@ public class ImageWithBackgroundComponent implements WoocationComponent {
 
 	private void processForComponentVars(WoocationCompoonentResponse headingCompoonentResponse) {
 		ApplicationVars componentHeadingApplicationVars = applicationVarsServiceImpl
-				.getApplicationVars(WOOCATION_HEADING_COMPONENT_NAME.getMessage());
+				.getApplicationVars(WOOCATION_IMAGE_WITH_BACKGROUND_COMPONENT_NAME.getMessage());
 		if (!StringUtils.isEmpty(componentHeadingApplicationVars)
 				&& !StringUtils.isEmpty(componentHeadingApplicationVars.getApplicationVarsContent())) {
 			componentHeadingApplicationVars.getApplicationVarsContent()

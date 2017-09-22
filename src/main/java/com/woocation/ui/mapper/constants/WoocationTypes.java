@@ -31,6 +31,11 @@ public enum WoocationTypes {
 	WOOCATION_PLAINTEXT_FONT_STYLE_DEFAULT_VALUE("") ,
 	
 
+	/**
+	 *  Image With Background Component
+	 */
+	
+	WOOCATION_IMAGE_WITH_BACKGROUND_COMPONENT_NAME("Image With Background"),
 	
 	
 	/**
@@ -49,6 +54,7 @@ public enum WoocationTypes {
 	WOOCATION_PADDING("padding"),
 	WOOCATION_HEIGHT("height"),
 	WOOCATION_COLOR("color"),
+	WOOCATION_IMAGE_URL("image_url"),
 	WOOCATION_GLOBAL_NAME("Global");
 	private String message;
 
