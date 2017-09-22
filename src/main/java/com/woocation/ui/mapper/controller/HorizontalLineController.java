@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.woocation.ui.mapper.request.HeadingComponentRequest;
+import com.woocation.ui.mapper.request.HorizontalComponentRequest;
 import com.woocation.ui.mapper.service.impl.HorizontalWoocationComponent;
 
 @RestController
@@ -19,8 +19,8 @@ public class HorizontalLineController {
 
 	@RequestMapping(value ="/")
 	public Map<String,Object> generatePlainTextContent(
-			@RequestBody HeadingComponentRequest headingComponentRequest) {
-		return horizontalWoocationComponent.processRequest(headingComponentRequest).getHeadingResponse();
+			@RequestBody HorizontalComponentRequest horizontalComponentRequest) {
+		return horizontalWoocationComponent.processRequest(horizontalComponentRequest).getHeadingResponse();
 	}
 
 }
