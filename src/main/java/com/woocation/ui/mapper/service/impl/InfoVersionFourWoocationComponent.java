@@ -103,6 +103,16 @@ public class InfoVersionFourWoocationComponent implements WoocationComponent {
 				WOOCATION_INFO_TEXT_FOUR_VALUE_SECTION_ALIGN_ITEMS_DEFAULT_VALUE.getMessage());
 		valueMap.put(WOOCATION_VALUE_TYPE.getMessage(),
 				WOOCATION_INFO_TEXT_FOUR_VALUE_SECTION_VALUE_TYPE_DEFAULT_VALUE.getMessage());
+		valueMap.put(WOOCATION_FONT_COLOR.getMessage(),
+				WOOCATION_INFO_TEXT_FOUR_VALUE_SECTION_FONT_COLOR_DEFAULT_VALUE.getMessage());
+		valueMap.put(WOOCATION_FONT_SIZE.getMessage(),
+				WOOCATION_INFO_TEXT_FOUR_VALUE_SECTION_FONT_SIZE_DEFAULT_VALUE.getMessage());
+		valueMap.put(WOOCATION_FONT_STYLE.getMessage(),
+				WOOCATION_INFO_TEXT_FOUR_VALUE_SECTION_FONT_STYLE_DEFAULT_VALUE.getMessage());
+		valueMap.put(WOOCATION_POPUP_BG_COLOR.getMessage(),
+				WOOCATION_INFO_TEXT_FOUR_VALUE_SECTION_POPUP_BG_COLOR_DEFAULT_VALUE.getMessage());
+		valueMap.put(WOOCATION_MENU_ITEMS_PADDING.getMessage(),
+				WOOCATION_INFO_TEXT_FOUR_VALUE_SECTION_MENU_ITEMS_PADDING_DEFAULT_VALUE.getMessage());
 		valueMap.put(WOOCATION_CONTENT.getMessage(), processForContent(infoTextVersionFourRequest));
 		return valueMap;
 	}
