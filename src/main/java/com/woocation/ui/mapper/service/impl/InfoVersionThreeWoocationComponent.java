@@ -86,11 +86,11 @@ public class InfoVersionThreeWoocationComponent implements WoocationComponent {
 		textMap.put(WOOCATION_TEXT.getMessage(), infoTextVersionThreeRequest.getTextSectionText());
 		textMap.put(WOOCATION_WIDTH.getMessage(),
 				WOOCATION_INFO_TEXT_THREE_TEXT_SECTION_WIDTH_DEFAULT_VALUE.getMessage());
-		textMap.put(WOOCATION_WIDTH.getMessage(),
+		textMap.put(WOOCATION_FONT_COLOR.getMessage(),
 				WOOCATION_INFO_TEXT_THREE_TEXT_SECTION_FONT_COLOR_DEFAULT_VALUE.getMessage());
-		textMap.put(WOOCATION_WIDTH.getMessage(),
+		textMap.put(WOOCATION_FONT_SIZE.getMessage(),
 				WOOCATION_INFO_TEXT_THREE_TEXT_SECTION_FONT_SIZE_DEFAULT_VALUE.getMessage());
-		textMap.put(WOOCATION_WIDTH.getMessage(),
+		textMap.put(WOOCATION_FONT_STYLE.getMessage(),
 				WOOCATION_INFO_TEXT_THREE_TEXT_SECTION_FONT_STYLE_DEFAULT_VALUE.getMessage());
 
 		return textMap;
@@ -117,9 +117,9 @@ public class InfoVersionThreeWoocationComponent implements WoocationComponent {
 			contentMap.put(WOOCATION_FONT_COLOR.getMessage(),
 					WOOCATION_INFO_TEXT_THREE_VALUE_SECTION_CONTENT_FONT_COLOR_DEFAULT_VALUE.getMessage());
 			contentMap.put(WOOCATION_FONT_SIZE.getMessage(),
-					WOOCATION_INFO_TEXT_THREE_VALUE_SECTION_CONTENT_FONT_COLOR_DEFAULT_VALUE.getMessage());
+					WOOCATION_INFO_TEXT_THREE_VALUE_SECTION_CONTENT_FONT_SIZE_DEFAULT_VALUE.getMessage());
 			contentMap.put(WOOCATION_FONT_STYLE.getMessage(),
-					WOOCATION_INFO_TEXT_THREE_VALUE_SECTION_CONTENT_FONT_COLOR_DEFAULT_VALUE.getMessage());
+					WOOCATION_INFO_TEXT_THREE_VALUE_SECTION_CONTENT_FONT_STYLE_DEFAULT_VALUE.getMessage());
 			contentList.add(contentMap);
 		});
 		if (!contentList.isEmpty()) {
