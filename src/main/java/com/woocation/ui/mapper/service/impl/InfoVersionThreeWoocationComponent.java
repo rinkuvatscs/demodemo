@@ -11,7 +11,9 @@ import com.woocation.ui.mapper.response.WoocationCompoonentResponse;
 import com.woocation.ui.mapper.service.WoocationComponent;
 import static com.woocation.ui.mapper.constants.WoocationTypes.*;
 
+import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -80,7 +82,7 @@ public class InfoVersionThreeWoocationComponent implements WoocationComponent {
 	}
 
 	private Map<String, Object> processTextSection(InfoTextVersionThreeRequest infoTextVersionThreeRequest) {
-		Map<String, Object> textMap = Collections.emptyMap();
+		Map<String, Object> textMap = new HashMap<>();
 		textMap.put(WOOCATION_TEXT.getMessage(), infoTextVersionThreeRequest.getTextSectionText());
 		textMap.put(WOOCATION_WIDTH.getMessage(),
 				WOOCATION_INFO_TEXT_THREE_TEXT_SECTION_WIDTH_DEFAULT_VALUE.getMessage());
@@ -95,7 +97,7 @@ public class InfoVersionThreeWoocationComponent implements WoocationComponent {
 	}
 
 	private Map<String, Object> processValueSection(InfoTextVersionThreeRequest infoTextVersionThreeRequest) {
-		Map<String, Object> valueMap = Collections.emptyMap();
+		Map<String, Object> valueMap = new HashMap<>();
 		valueMap.put(WOOCATION_WIDTH.getMessage(),
 				WOOCATION_INFO_TEXT_THREE_VALUE_SECTION_WIDTH_DEFAULT_VALUE.getMessage());
 		valueMap.put(WOOCATION_ALIGN_ITEMS.getMessage(),
@@ -107,10 +109,10 @@ public class InfoVersionThreeWoocationComponent implements WoocationComponent {
 	}
 
 	private Map<String, Object> processForContent(InfoTextVersionThreeRequest infoTextVersionThreeRequest) {
-		Map<String, Object> responseMap = Collections.emptyMap();
-		List<Map<String, Object>> contentList = Collections.emptyList();
+		Map<String, Object> responseMap = new HashMap<>();
+		List<Map<String, Object>> contentList = new ArrayList<>();
 		infoTextVersionThreeRequest.getContent().forEach(text -> {
-			Map<String, Object> contentMap = Collections.emptyMap();
+			Map<String, Object> contentMap = new HashMap<>();
 			contentMap.put(WOOCATION_TEXT.getMessage(), text);
 			contentMap.put(WOOCATION_FONT_COLOR.getMessage(),
 					WOOCATION_INFO_TEXT_THREE_VALUE_SECTION_CONTENT_FONT_COLOR_DEFAULT_VALUE.getMessage());

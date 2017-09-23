@@ -13,6 +13,7 @@ import com.woocation.ui.mapper.service.WoocationComponent;
 import static com.woocation.ui.mapper.constants.WoocationTypes.*;
 
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.Map;
 
 @Component
@@ -80,7 +81,7 @@ public class InfoVersionTwoWoocationComponent implements WoocationComponent {
 	}
 
 	private Map<String, Object> processTextSection(InfoTextVersionTwoRequest infoTextVersionTwoRequest) {
-		Map<String, Object> textMap = Collections.emptyMap();
+		Map<String, Object> textMap = new HashMap<>();
 		textMap.put(WOOCATION_TEXT.getMessage(), infoTextVersionTwoRequest.getTextSection());
 		textMap.put(WOOCATION_WIDTH.getMessage(),
 				WOOCATION_INFO_TEXT_TWO_TEXT_SECTION_WIDTH_DEFAULT_VALUE.getMessage());
@@ -95,7 +96,7 @@ public class InfoVersionTwoWoocationComponent implements WoocationComponent {
 	}
 
 	private Map<String, Object> processValueSection(InfoTextVersionTwoRequest infoTextVersionTwoRequest) {
-		Map<String, Object> valueMap = Collections.emptyMap();
+		Map<String, Object> valueMap = new HashMap<>();
 		valueMap.put(WOOCATION_ICON.getMessage(), infoTextVersionTwoRequest.getIconUrl());
 		valueMap.put(WOOCATION_URL.getMessage(), infoTextVersionTwoRequest.getLinkUrl());
 		valueMap.put(WOOCATION_WIDTH.getMessage(),
