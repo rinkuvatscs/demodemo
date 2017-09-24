@@ -11,7 +11,6 @@ import com.woocation.ui.mapper.response.WoocationCompoonentResponse;
 import com.woocation.ui.mapper.service.WoocationComponent;
 import static com.woocation.ui.mapper.constants.WoocationTypes.*;
 
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -84,11 +83,11 @@ public class InfoVersionOneWoocationComponent implements WoocationComponent {
 		textMap.put(WOOCATION_TEXT.getMessage(), infoTextVersionOneRequest.getTextSectionText());
 		textMap.put(WOOCATION_WIDTH.getMessage(),
 				WOOCATION_INFO_TEXT_ONE_TEXT_SECTION_WIDTH_DEFAULT_VALUE.getMessage());
-		textMap.put(WOOCATION_WIDTH.getMessage(),
+		textMap.put(WOOCATION_FONT_COLOR.getMessage(),
 				WOOCATION_INFO_TEXT_ONE_TEXT_SECTION_FONT_COLOR_DEFAULT_VALUE.getMessage());
-		textMap.put(WOOCATION_WIDTH.getMessage(),
+		textMap.put(WOOCATION_FONT_SIZE.getMessage(),
 				WOOCATION_INFO_TEXT_ONE_TEXT_SECTION_FONT_SIZE_DEFAULT_VALUE.getMessage());
-		textMap.put(WOOCATION_WIDTH.getMessage(),
+		textMap.put(WOOCATION_FONT_STYLE.getMessage(),
 				WOOCATION_INFO_TEXT_ONE_TEXT_SECTION_FONT_STYLE_DEFAULT_VALUE.getMessage());
 
 		return textMap;
