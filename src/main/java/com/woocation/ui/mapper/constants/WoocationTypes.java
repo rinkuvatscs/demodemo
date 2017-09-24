@@ -303,6 +303,20 @@ public enum WoocationTypes {
 	
 	
 	/**
+	 * Carousel Component
+	 */
+	WOOCATION_CAROUSEL_DISPLAY_NAME_DEFAULT_VALUE("Carousel"),
+	WOOCATION_CAROUSEL_DEFAULT_VALUE("carousel"),
+	
+	
+	/**
+	 * Drop Down Component 
+	 */
+	WOOCATION_DROP_DOWN_COMPONENT_NAME("Dropdown"),
+	WOOCATION_DROP_DOWN_DISPLAY_NAME_DEFAULT_VALUE("Dropdown"),
+	WOOCATION_DROP_DOWN_TYPE_DEFAULT_VALUE("dropdown"),
+	
+	/**
 	 * Insight Level keys
 	 */
 	WOOCATION_DISPLAY_NAME("displayName"),
@@ -356,6 +370,10 @@ public enum WoocationTypes {
 	WOOCATION_DESC("desc"),
 	WOOCATION_SCORE("score"),
 	WOOCATION_TOTAL("total"),
+	WOOCATION_ITEMS("items"),
+	WOOCATION_DROPDOWN_DATA("dropdown_data"),
+	WOOCATION_SECTION_DATA("section_data"),
+	WOOCATION_VALUE("value"),
 	WOOCATION_GLOBAL_NAME("Global");
 	
 	private String message;
