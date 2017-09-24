@@ -19,8 +19,8 @@ public class InfoTextVersionFourController {
 
 	@RequestMapping(value = "/")
 	public Map<String, Object> generatePlainTextContent(
-			@RequestBody InfoTextVersionFourRequest infoTextVersionThreeRequest) {
-		return infoVersionFourWoocationComponent.processRequest(infoTextVersionThreeRequest).getHeadingResponse();
+			@RequestBody InfoTextVersionFourRequest infoTextVersionFourRequest) {
+		return infoVersionFourWoocationComponent.processRequest(infoTextVersionFourRequest).getHeadingResponse();
 	}
 
 }
